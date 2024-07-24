@@ -9,7 +9,7 @@ public class Exercicio1 {
 		String menu = "Bem vindo ao mercado " + nomeMercado + "\n\n" + "Selecione uma das opções:\n"
 				+ "1 - Cadastrar Mercadoria\n" + "2 - Listar Mercadorias\n\n" + "0 - Sair\n";
 		int opcao = 0;
-		int numMaxMercadorias = 2;
+		int numMaxMercadorias = 50;
 
 		String[] nomeMercadoria = new String[numMaxMercadorias];
 		int[] quantidadeMercadoria = new int[numMaxMercadorias];
@@ -31,6 +31,13 @@ public class Exercicio1 {
 					JOptionPane.showMessageDialog(null, "Número máximo de produtos atingido.");
 				}
 				break;
+			}
+			case 2: {
+				String msg = "";
+				for (int i : quantidadeMercadoria) {
+					msg += nomeMercadoria[i] + " " + quantidadeMercadoria[i];
+				}
+				JOptionPane.showMessageDialog(null, msg);
 			}
 			}
 		} while (opcao != 0);
